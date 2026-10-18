@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from assistant.views import generate_ai_response, service_worker
+from assistant.views import generate_ai_response, index_view, service_worker
 
 urlpatterns = [
     path('admin/', admin.site.urls),
