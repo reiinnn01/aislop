@@ -16,8 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from assistant.views import generate_ai_response, service_worker
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('assistant.urls')),
+    path('', index_view, name='home'),
+    path('api/generate/', generate_ai_response, name='generate_ai'),
+    path('sw.js', service_worker, name='service_worker'),
 ]
